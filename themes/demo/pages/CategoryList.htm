@@ -1,0 +1,32 @@
+title = "Category Detail"
+url = "/category/:slug"
+layout = "blog-template"
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ :slug }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "CategoryList"
+postPage = "blog-detail"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "CategoryList"
+==
+<div class="col-md-8">
+    <h1 class="my-4">
+        {{ category.name }}
+    </h1>
+      
+    <section class="sectionalt">
+        <div class="container">
+            <div class="left-container">
+                {% component 'blogPosts' %}
+            </div>
+        </div>
+    </section>
+</div>

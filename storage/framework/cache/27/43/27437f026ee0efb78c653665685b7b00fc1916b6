@@ -1,0 +1,53 @@
+1550893418a:1:{s:15:"blog-detail.htm";a:13:{s:8:"fileName";s:15:"blog-detail.htm";s:7:"content";s:994:"title = "Blog Detail"
+url = "/blog/:slug"
+layout = "blog-template"
+meta_title = "furuCRM株式会社｜ベトナムオフショア開発・Salesforceプラットフォームカスタマイズ/製品開発/クラウドソリューション提案/furuCRM/furucrm"
+meta_description = "セールスフォース＋オープンソース(GCP+AWS+Heroku+Azure)のベトナムオフショア開発"
+is_hidden = 0
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "CategoryList"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "CategoryList"
+==
+<?php
+function onEnd()
+{
+    $this->page->title = $this['post']->title;
+    $this->page->meta_title = $this['post']->title;
+}
+?>
+==
+<div class="col-md-8">
+    <h1 class="my-4">
+       {{ post.title }}
+    </h1>
+      
+    <section class="sectionalt">
+        <div class="container">
+            <div class="left-container">
+                {% component 'blogPost' %}
+            </div>
+        </div>
+    </section>
+</div>";s:5:"mtime";i:1549347534;s:6:"markup";s:302:"<div class="col-md-8">
+    <h1 class="my-4">
+       {{ post.title }}
+    </h1>
+      
+    <section class="sectionalt">
+        <div class="container">
+            <div class="left-container">
+                {% component 'blogPost' %}
+            </div>
+        </div>
+    </section>
+</div>";s:4:"code";s:123:"function onEnd()
+{
+    $this->page->title = $this['post']->title;
+    $this->page->meta_title = $this['post']->title;
+}";s:5:"title";s:11:"Blog Detail";s:3:"url";s:11:"/blog/:slug";s:6:"layout";s:13:"blog-template";s:10:"meta_title";s:179:"furuCRM株式会社｜ベトナムオフショア開発・Salesforceプラットフォームカスタマイズ/製品開発/クラウドソリューション提案/furuCRM/furucrm";s:16:"meta_description";s:106:"セールスフォース＋オープンソース(GCP+AWS+Heroku+Azure)のベトナムオフショア開発";s:9:"is_hidden";s:1:"0";s:8:"blogPost";a:2:{s:4:"slug";s:11:"{{ :slug }}";s:12:"categoryPage";s:12:"CategoryList";}s:14:"blogCategories";a:3:{s:4:"slug";s:11:"{{ :slug }}";s:12:"displayEmpty";s:1:"0";s:12:"categoryPage";s:12:"CategoryList";}}}

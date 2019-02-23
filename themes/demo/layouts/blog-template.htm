@@ -1,0 +1,104 @@
+[googleTracker]
+==
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+    <head>
+        <meta charset="utf-8">
+        <title>{{ this.page.title }}</title>
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
+        <meta name="google-site-verification" content="4SnUlvGp-ZkN4dMGPdilOMoGYcf9wwkQxMdvVbfbDMI" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="{{ 'assets/images/favicon.ico'|theme }}">
+        <link rel="stylesheet" href="{{ 'assets/vendors/bootstrap/css/bootstrap.min.css'|theme }}" type="text/css" >
+        <link rel="stylesheet" href="{{ 'assets/vendors/fontawesome/css/fontawesome-all.min.css'|theme }}" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Titillium+Web:200,300,400,600" rel="stylesheet">
+        <link rel="stylesheet" href="{{ 'assets/css/blog-home.css'|theme }}" type="text/css">
+        <link rel="stylesheet" href="{{ 'assets/vendors/google-code-prettify/prettify.css'|theme }}" type="text/css">
+        <link rel="stylesheet" href="{{ 'assets/vendors/google-code-prettify/skins/desert.css'|theme }}" type="text/css">
+        {% styles %}
+        {% component 'googleTracker' %}
+    </head>
+
+  <body class="h-100" onload="PR.prettyPrint()">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">furuCRM Inc.</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/#about">About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#team">Leadership</a>
+            </li>
+            <li class="nav-item">
+                <a href="/#contact" class="nav-link">
+                    <span class="type">Contact</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/blog" class="nav-link">
+                    <span class="type">Blog Me</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/category/recruitmen" class="nav-link">
+                    <span class="type">Recruit Me</span>
+                </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container" style="min-height: 100%;margin: 0 auto -120px;">
+
+      <div class="row">
+
+        <!-- Blog Entries Column -->
+        {% page %}
+        
+        {% partial 'blog-sidebar' %}
+        
+      </div>
+      <!-- /.row -->
+        <div style="height:120px;"></div>
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; furuCRM 2018</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ 'assets/vendors/jquery.min.js'|theme }}" type="text/javascript"></script>
+    <script src="{{ 'assets/vendors/popper.min.js'|theme }}"></script>
+    <script src="{{ 'assets/vendors/bootstrap/js/bootstrap.bundle.min.js'|theme }}" type="text/javascript"></script>
+    <script src="{{ 'assets/vendors/google-code-prettify/prettify.js'|theme }}" type="text/javascript"></script>
+    <script>
+        $(document).ready(function(){
+            var pres = $('.content').find('pre');
+            $.each( pres, function( key, item ) {
+                if($(item).has('code').length) {
+                    $(item).addClass("prettyprint");
+                }
+            });
+        })
+    </script>
+  </body>
+
+</html>

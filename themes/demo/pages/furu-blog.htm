@@ -1,0 +1,30 @@
+title = "furu blog"
+url = "/blog"
+layout = "blog-template"
+meta_title = "furuCRM株式会社｜ベトナムオフショア開発・Salesforceプラットフォームカスタマイズ/製品開発/クラウドソリューション提案/furuCRM/furucrm"
+meta_description = "日本とベトナム（ホーチミン）で事業展開する開発会社です。ベトナムオフショア開発・Salesforceカスタマイズ/製品開発。
+テクニカルブログ：セールスフォース＋オープンソースオフショア開発"
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ !:slug }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "CategoryList"
+postPage = "blog-detail"
+==
+<div class="col-md-8">
+    <h1 class="my-4">
+        New Blogs
+    </h1>
+      
+    <section class="sectionalt">
+        <div class="container">
+            <div class="left-container">
+                {% component 'blogPosts' %}
+            </div>
+        </div>
+    </section>
+</div>
